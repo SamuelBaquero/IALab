@@ -2,15 +2,19 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Canvas from './Canvas.js'
+
 class App extends Component {
   constructor(props){
-    super(props);
-  }
+      super(props);
+  };
 
   render() {
     return (
-      <div className="App">
-        Hola Mundo
+      <div>
+        <div className="canvas container">
+          <Canvas></Canvas>
+        </div>
       </div>
     );
   }
