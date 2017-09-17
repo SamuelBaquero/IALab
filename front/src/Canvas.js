@@ -11,7 +11,7 @@ class Canvas extends Component{
 	renderMaze() {
 		return (
 			this.props.maze.tiles.map((t)=>{
-				const sqsize = 100/this.state.maze.size;
+				const sqsize = 100/this.props.maze.size;
 				const style = {
 					width: sqsize + '%',
 					height: sqsize + '%'

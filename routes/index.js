@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var mongodb = require("mongodb");
+var mongodb = require('mongodb');
+var solver = require('../public/javascripts/solver.js');
 
 /* URL DE MONGO */
 var url = "mongodb://localhost:27017/labAI";
