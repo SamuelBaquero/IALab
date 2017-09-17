@@ -1,0 +1,35 @@
+.solutionsol{
+	margin-top: 1.5%;
+	margin-left: 7.5%;
+	height:10%;
+	width:10%;
+	background-color: yellow;
+	border-radius: 50px;
+	position: absolute;
+}
+
+.startsol{
+	margin-top: 1.5%;
+	margin-left: 7.5%;
+	height:10%;
+	width:10%;
+	background-color: blue;
+	border-radius: 50px;
+	position: absolute;
+}
+
+.endsol{
+	margin-top: 1.5%;
+	margin-left: 7.5%;
+	height:10%;
+	width:10%;
+	background-color: green;
+	border-radius: 50px;
+	position: absolute;
+	align-self: center;
+}
+
+.tree{
+	height: 400px;
+	width: 400px;
+}

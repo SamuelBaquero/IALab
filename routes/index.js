@@ -20,10 +20,19 @@ function getMaze(callback){
 	});
 }
 
+function postMaze(mazecode, callback){
+	callback(solver.solve(mazecode.maze,mazecode.code, callback));
+}
 
 /* GET home page. */
 router.get('/maze', function(req, res){
 	getMaze((maze)=>{
+		res.json(maze);
+	});
+});
+
+router.post('/maze/solve', function(req, res){
+	postMaze((maze)=>{
 		res.json(maze);
 	});
 });

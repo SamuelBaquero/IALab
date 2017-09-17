@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
-import './Canvas.css'
+import './Canvas.css';
 
 class Canvas extends Component{
 	constructor(props){
@@ -19,7 +19,7 @@ class Canvas extends Component{
 				const contentclass = t.class;
 				const tileclass = 'tile tile'+t.type;
 				return(
-					<div className="cell" style={style}>
+					<div className="cell" key={t.id} style={style}>
 						<div className={tileclass}>
 							{t.id}
 							<div className={contentclass}>
