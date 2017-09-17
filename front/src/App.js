@@ -7,13 +7,31 @@ import Canvas from './Canvas.js'
 class App extends Component {
   constructor(props){
       super(props);
+
+      this.state={
+        maze:{}
+      }
   };
+
+  componentDidMount(){
+    fetch("/maze", {method:"GET", 
+      headers:"application/json"})
+    .then((res)=>{
+      if(res.ok)
+        return res.json();
+    })
+    .then((maze)=>{
+      this.setState({
+        maze: maze
+      })
+    })
+  }
 
   render() {
     return (
       <div>
         <div className="canvas container">
-          <Canvas></Canvas>
+          <Canvas maze={this.state.maze}/>
         </div>
       </div>
     );

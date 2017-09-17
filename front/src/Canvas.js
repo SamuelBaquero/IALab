@@ -1,49 +1,30 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 import './Canvas.css'
 
-export default class Canvas extends Component{
+class Canvas extends Component{
 	constructor(props){
 		super(props);
-
-		this.state = {
-	      maze: {
-	          size:'4',
-	          squares:
-	            [
-	              {id:14},
-	              {id:1},
-	              {id:13},
-	              {id:123},
-	              {id:234},
-	              {id:24},
-	              {id:14},
-	              {id:12},
-	              {id:124},
-	              {id:4},
-	              {id:23},
-	              {id:24},
-	              {id:34},
-	              {id:23},
-	              {id:134},
-	              {id:23}
-	            ]
-	     	}
-		}
 	}
 
 	renderMaze() {
 		return (
-			this.state.maze.squares.map((t)=>{
+			this.props.maze.tiles.map((t)=>{
 				const sqsize = 100/this.state.maze.size;
 				const style = {
 					width: sqsize + '%',
-					height: sqsize + '%',
+					height: sqsize + '%'
 				}
-				const tileclass = 'tile tile'+t.id;
+				const contentclass = t.class;
+				const tileclass = 'tile tile'+t.type;
 				return(
 					<div className="cell" style={style}>
-						<div className={tileclass}>{t.id}</div>
+						<div className={tileclass}>
+							{t.id}
+							<div className={contentclass}>
+							</div>
+						</div>
 					</div>
 					);
 			})
@@ -60,3 +41,9 @@ export default class Canvas extends Component{
 		);
 	}
 }
+
+Canvas.propTypes ={
+	maze: PropTypes.object.isRequired
+}
+
+export default Canvas;
